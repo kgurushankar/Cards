@@ -4,13 +4,6 @@ public class Card {
 	private int number;
 	private int suit;
 
-	/*
-	 * public Card(int number, int suit) { if (number > 0 && number < 14) {
-	 * this.number = number; } if (suit > 0 && suit < 5) { this.suit = suit; }
-	 * 
-	 * checkValue(); }
-	 */
-
 	public Card(int number, String suit) {
 		if (number > 0 && number < 14) {
 			this.number = number;
@@ -116,7 +109,7 @@ public class Card {
 	public int getRawSuit() {
 		return suit;
 	}
-	
+
 	@Override
 	public String toString() {
 		String out = "";
@@ -131,6 +124,14 @@ public class Card {
 		out += getSuit();
 		return out;
 
+	}
+
+	public String getColor() {
+		if (this.suit % 2 == 0) {
+			return "Red";
+		} else {
+			return "Black";
+		}
 	}
 
 	private void checkValue() {
