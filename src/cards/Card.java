@@ -8,13 +8,13 @@ public class Card {
 		if (number > 0 && number < 14) {
 			this.number = number;
 		}
-		if (suit.equals("Spades")) {
+		if (suit.toLowerCase().equals("spades")) {
 			this.suit = 1;
-		} else if (suit.equals("Hearts")) {
+		} else if (suit.toLowerCase().equals("hearts")) {
 			this.suit = 2;
-		} else if (suit.equals("Clubs")) {
+		} else if (suit.toLowerCase().equals("clubs")) {
 			this.suit = 3;
-		} else if (suit.equals("Diamonds")) {
+		} else if (suit.toLowerCase().equals("diamonds")) {
 			this.suit = 4;
 		}
 		checkValue();
@@ -48,13 +48,13 @@ public class Card {
 			}
 		}
 
-		if (read[2].equals("Spades")) {
+		if (read[2].equals("spades")) {
 			this.suit = 1;
-		} else if (read[2].equals("Hearts")) {
+		} else if (read[2].equals("hearts")) {
 			this.suit = 2;
-		} else if (read[2].equals("Clubs")) {
+		} else if (read[2].equals("clubs")) {
 			this.suit = 3;
-		} else if (read[2].equals("Diamonds")) {
+		} else if (read[2].equals("diamonds")) {
 			this.suit = 4;
 		}
 
@@ -70,13 +70,13 @@ public class Card {
 		if (number > 1 && number < 11) {
 			return String.valueOf(number);
 		} else if (number == 1) {
-			return "Ace";
+			return "ace";
 		} else if (number == 11) {
-			return "Jack";
+			return "jack";
 		} else if (number == 12) {
-			return "Queen";
+			return "queen";
 		} else if (number == 13) {
-			return "King";
+			return "king";
 		} else {
 			return "Error";
 		}
@@ -89,16 +89,16 @@ public class Card {
 	public String getSuit() {
 		switch (suit) {
 		case (1): {
-			return "Spades";
+			return "spades";
 		}
 		case (2): {
-			return "Hearts";
+			return "hearts";
 		}
 		case (3): {
-			return "Clubs";
+			return "clubs";
 		}
 		case (4): {
-			return "Diamonds";
+			return "diamonds";
 		}
 		default: {
 			return "Error";
