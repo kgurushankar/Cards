@@ -25,6 +25,10 @@ public class Deck {
 			}
 		}
 	}
+	/**Allows for custom decks*/
+	public Deck(Card[] cards){
+		this.cards = cards; 
+	}
 
 	public void ShuffleDeck() {
 		Collections.shuffle(Arrays.asList(cards));
@@ -73,18 +77,6 @@ public class Deck {
 			if (cards[i] != null) {
 				return cards[i];
 			}
-		}
-	}
-
-	public static void main(String[] args) {
-		Deck deck = new Deck();
-		for (int i = 0; i < deck.cards.length; i++) {
-			System.out.println(deck.cards[i]);
-		}
-		System.out.println();
-		deck.ShuffleDeck();
-		for (int i = 0; i < deck.cards.length; i++) {
-			System.out.println(deck.cards[i]);
 		}
 	}
 }
