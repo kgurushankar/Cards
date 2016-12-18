@@ -4,14 +4,24 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Deck {
-	private Card[] cards;
+	Card[] cards;
 
 	public Deck() {
-		cards = new Card[52];
+		this(1);
+	}
+
+	/**
+	 * size is the number of (52 card) decks that make up this deck (size 2
+	 * would be 104 cards, 3 would be 156, etc.)
+	 */
+	public Deck(int size) {
+		cards = new Card[52 * size];
 		String[] suits = { "Spades", "Hearts", "Clubs", "Diamonds" };
-		for (int suit = 1; suit <= 4; suit++) {
-			for (int number = 1; number <= 13; number++) {
-				cards[(suit - 1) * 13 + (number - 1)] = new Card(number, suits[suit - 1]);
+		for (int decks = 1; decks <= size; decks++) {
+			for (int suit = 1; suit <= 4; suit++) {
+				for (int number = 1; number <= 13; number++) {
+					cards[(suit - 1) * 13 + (number - 1)] = new Card(number, suits[suit - 1]);
+				}
 			}
 		}
 	}
@@ -42,6 +52,7 @@ public class Deck {
 			}
 		}
 	}
+
 	/**
 	 * Returns a random card from the deck without removing it from the deck
 	 */
