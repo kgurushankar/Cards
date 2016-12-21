@@ -133,6 +133,18 @@ public class Card {
 			return "Black";
 		}
 	}
+	
+	public boolean equals(Card card) {
+		return (this.suit == card.getRawSuit() && this.number == card.getRawValue());
+	}
+
+	public boolean sameSuit(Card card) {
+		return (this.suit == card.getRawSuit());
+	}
+
+	public boolean sameValue(Card card) {
+		return (this.number == card.getRawValue());
+	}
 
 	private void checkValue() {
 		if (this.number == 0) {
