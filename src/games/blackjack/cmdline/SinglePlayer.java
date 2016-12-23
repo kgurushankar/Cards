@@ -33,6 +33,9 @@ public class SinglePlayer {
 		player = new Hand();
 		playerCount = 0;
 		dealerCount = 0;
+		System.out.println();
+		System.out.println("Game Resetting...");
+		System.out.println();
 	}
 
 	public void runGame() {
