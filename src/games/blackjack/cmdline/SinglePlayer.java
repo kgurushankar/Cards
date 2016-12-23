@@ -6,7 +6,6 @@ import cards.*;
 
 public class SinglePlayer {
 	private Hand dealer, player;
-	private int playerCount, dealerCount;
 	private Deck deck;
 
 	public SinglePlayer() {
@@ -14,8 +13,6 @@ public class SinglePlayer {
 		deck.ShuffleDeck();
 		dealer = new Hand();
 		player = new Hand();
-		playerCount = 0;
-		dealerCount = 0;
 
 	}
 
@@ -31,8 +28,6 @@ public class SinglePlayer {
 		deck.ShuffleDeck();
 		dealer = new Hand();
 		player = new Hand();
-		playerCount = 0;
-		dealerCount = 0;
 		System.out.println();
 		System.out.println("Game Resetting...");
 		System.out.println();
@@ -92,11 +87,9 @@ public class SinglePlayer {
 	private void draw(int person) {
 		if (person == 0) {
 			dealer.addCard(deck.draw());
-			dealerCount++;
 			return;
 		} else if (person == 1) {
 			player.addCard(deck.draw());
-			playerCount++;
 			return;
 		}
 	}
