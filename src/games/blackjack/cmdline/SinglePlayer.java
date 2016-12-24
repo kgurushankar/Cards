@@ -51,7 +51,7 @@ public class SinglePlayer {
 		}
 
 		// dealer draws until dealer is over 17
-		while (sum(dealer) < 17) {
+		while (sum(dealer) < 17 && sum(player) <= 21) {
 			draw(0);
 		}
 
