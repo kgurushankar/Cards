@@ -29,6 +29,8 @@ public class SinglePlayer {
 				game.reset();
 			}
 		}
+		System.out.println();
+		System.out.println("Bye!");
 	}
 
 	public void reset() {
