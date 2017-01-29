@@ -7,20 +7,28 @@ import cards.*;
 public class SinglePlayer {
 	private Hand dealer, player;
 	private Deck deck;
+	Scanner in;
 
 	public SinglePlayer() {
 		deck = new Deck();
 		deck.ShuffleDeck();
 		dealer = new Hand();
 		player = new Hand();
+		in = new Scanner(System.in);
 
 	}
 
 	public static void main(String[] args) {
 		SinglePlayer game = new SinglePlayer();
-		game.runGame();
-		game.reset();
-		game.runGame();
+		String user = "y";
+		while (user.equals("y")) {
+			game.runGame();
+			System.out.print("Play Again? (y/n)");
+			user = game.in.nextLine();
+			if (user.equals("y")) {
+				game.reset();
+			}
+		}
 	}
 
 	public void reset() {
@@ -132,7 +140,6 @@ public class SinglePlayer {
 				return false;
 			}
 
-			Scanner in = new Scanner(System.in);
 			System.out.println("Stay or Hit?");
 			String a = in.nextLine().toLowerCase();
 			// checks input
