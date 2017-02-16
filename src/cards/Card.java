@@ -45,6 +45,7 @@ public class Card {
 		for (int i = 1; i < 14; i++) {
 			if (read[0].equals(String.valueOf(i)) || read[0].equals(numbers[i - 1])) {
 				this.number = i;
+				break;
 			}
 		}
 
@@ -82,10 +83,6 @@ public class Card {
 		}
 	}
 
-	public int getRawValue() {
-		return number;
-	}
-
 	public String getSuit() {
 		switch (suit) {
 		case (1): {
@@ -104,10 +101,6 @@ public class Card {
 			return "Error";
 		}
 		}
-	}
-
-	public int getRawSuit() {
-		return suit;
 	}
 
 	@Override
@@ -133,17 +126,17 @@ public class Card {
 			return "Black";
 		}
 	}
-	
+
 	public boolean equals(Card card) {
-		return (this.suit == card.getRawSuit() && this.number == card.getRawValue());
+		return (this.suit == card.suit && this.number == card.suit);
 	}
 
 	public boolean sameSuit(Card card) {
-		return (this.suit == card.getRawSuit());
+		return (this.suit == card.suit);
 	}
 
 	public boolean sameValue(Card card) {
-		return (this.number == card.getRawValue());
+		return (this.number == card.suit);
 	}
 
 	private void checkValue() {
