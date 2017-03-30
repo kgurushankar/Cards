@@ -147,5 +147,9 @@ public class Card {
 			this.suit = (int) (Math.random() * 4) + 1;
 		}
 	}
+	
+	public int getRawValue(){
+		return number;
+	}
 
 }
